@@ -1,8 +1,3 @@
-# actions-date
-
-A composite GitHub Actions that outputs datetime with date(1)
-
-```yaml
 name: Test
 on:
   push:
@@ -20,4 +15,3 @@ jobs:
           format: '%Y-%m-%dT%H:%M:%S'
       - run: echo '${{ steps.default.outputs.date }}'
       - run: echo '${{ steps.with-format.outputs.date }}'
-```

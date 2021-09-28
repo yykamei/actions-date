@@ -1,0 +1,19 @@
+name: date(1)
+description: Run date(1)
+inputs:
+  format:
+    description: Date format for date(1)
+    required: false
+    default: "%Y_%m_%dT%H_%M_%S"
+outputs:
+  date:
+    description: The output of date(1)
+    value: ${{ steps.date.outputs.date }}
+runs:
+  using: composite
+  steps:
+    - name: date(1)
+      id: date
+      run: |
+        echo "::set-output name=date::$(date +${{ inputs.format }})"
+      shell: bash
