@@ -15,5 +15,5 @@ runs:
     - name: date(1)
       id: date
       run: |
-        echo "::set-output name=date::$(date +${{ inputs.format }})"
+        echo "date=$(date +${{ inputs.format }})" >> $GITHUB_OUTPUT
       shell: bash
